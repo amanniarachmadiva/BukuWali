@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1024364375618",
+    "firebase_url": "https://pbobaru-c5a9e.firebaseio.com",
+    "project_id": "pbobaru-c5a9e",
+    "storage_bucket": "pbobaru-c5a9e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1024364375618:android:65a1c6442a425d0d",
+        "android_client_info": {
+          "package_name": "com.example.pbobaru"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1024364375618-5mieupujoc52te9kk00hss35jkbbtagm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.pbobaru",
+            "certificate_hash": "81dcc6a4f59b78fda67c24f0fd667e1edc9e7939"
+          }
+        },
+        {
+          "client_id": "1024364375618-nnabnqk0vgv4jdov0bcitrn62ib2nrak.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNZCz7c43mBm3Ns6RlDeCcoIXz000IrHA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1024364375618-nnabnqk0vgv4jdov0bcitrn62ib2nrak.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
