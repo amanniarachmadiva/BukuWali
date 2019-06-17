@@ -1,7 +1,19 @@
 package com.example.pbobaru.model;
 
-import java.lang.reflect.Array;
+/* Model database Ortu (firebase), berisi data-data siswa dan orang tua siswa yang ditampilkan di
+submenu data diri siswa */
+
+/* model ini menggunakan ArrayList karena class Ortu merupakan parent dari class Nilai dan SPP,
+sehingga di setiap akun pengguna (dimodelkan dalam "Ortu") terdapat database nilai (dimodelkan
+dalam "Nilai") dan database laporan pembayaran SPP (dimodelkan dalam "SPP") sesuai data masing-
+masing siswa. */
+
 import java.util.ArrayList;
+
+/* Class Ortu menerapkan konsep Encapsulation dimana variabel-variabel yang terdapat di dalam
+class Ortu bersifat private. Meskipun bersifat private, dibuat method set & get yang bersifat
+public untuk masing-masing variabel untuk mendapatkan value dari masing-masing variabel. Method-
+method tersebut bersifat public sehingga bisa diakses oleh class lain.*/
 
 public class Ortu {
     private String namaOrtu;

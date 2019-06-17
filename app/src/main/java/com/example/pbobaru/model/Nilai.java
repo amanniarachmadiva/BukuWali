@@ -1,6 +1,14 @@
 package com.example.pbobaru.model;
 
+/* Model database Nilai (firebase), berfungsi untuk pemodelan daftar nilai siswa di database */
+
+/* Class Nilai menerapkan konsep Encapsulation dimana variabel-variabel yang terdapat di dalam
+class Nilai bersifat private. Meskipun bersifat private, dibuat method set & get yang bersifat
+public untuk masing-masing variabel untuk mendapatkan value dari masing-masing variabel. Method-
+method tersebut bersifat public sehingga bisa diakses oleh class lain.*/
+
 public class Nilai {
+
     private int BahasaIndonesia;
     private int Matematika;
     private int IPA;
@@ -77,8 +85,10 @@ public class Nilai {
         Agama = agama;
     }
 
+    /* Override method di bawah merupakan penerapan konsep Polymorphism */
     @Override
-    public String toString() {
+    public String toString()
+    {
         return "Nilai{" +
                 "BahasaIndonesia=" + BahasaIndonesia +
                 ", Matematika=" + Matematika +
@@ -91,7 +101,9 @@ public class Nilai {
                 '}';
     }
 
-    public Nilai(int bahasaIndonesia, int matematika, int IPA, int bahasaInggris, int PKn, int mulok, int seni, int agama) {
+    public Nilai(int bahasaIndonesia, int matematika, int IPA, int bahasaInggris, int PKn, int mulok,
+                 int seni, int agama)
+    {
         BahasaIndonesia = bahasaIndonesia;
         Matematika = matematika;
         this.IPA = IPA;

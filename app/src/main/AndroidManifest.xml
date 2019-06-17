@@ -21,7 +21,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".pembayaranspp" />
-        <activity android:name=".aktivitas" />
         <activity android:name=".datadiri" />
         <activity android:name=".MainActivity" />
     </application>

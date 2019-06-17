@@ -15,15 +15,25 @@ import com.google.firebase.database.ValueEventListener;
 
 import org.w3c.dom.Text;
 
+/* Class NilaiSemester berfungsi untuk menampilkan daftar nilai siswa di semester tertentu. (Sesuai
+yang dipilih di menu sebelumnya (NilaiActivity) */
+
+/* Class NilaiSemester menerapkan konsep Inheritance, yaitu pewarisan dari class AppCompatActivity yang
+merupakan bawaan dari Android Stuido. Hal ini ditunjukkan dengan keyword "extends". */
+
+
 public class NilaiSemester extends AppCompatActivity {
 
     DatabaseReference db;
     TextView agama, bindo, bing, ipa, mat, mulok, pkn, seni, title, ratarata;
+
+    /* Override method di bawah merupakan penerapan konsep Polymorphism */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nilai_semester);
 
+        /* Sintaks untuk menghubungkan dengan antarmuka (UI) */
         title = findViewById(R.id.tvTitle);
         agama = findViewById(R.id.tvNilaiAgama);
         bindo = findViewById(R.id.tvNilaiBindo);
@@ -37,15 +47,21 @@ public class NilaiSemester extends AppCompatActivity {
 
         Intent intent = getIntent();
 
+        /* Sintaks untuk mendapatkan id unser sesuai yang ada di database */
         String id = FirebaseAuth.getInstance().getCurrentUser().getUid();
         title.setText("Nilai Semester " + (Integer.valueOf(intent.getStringExtra("EXTRA_SEMESTER")) + 1));
 
+        /* Program mengakses data di database (firebase) sesuai id ortu / pengguna */
         db = FirebaseDatabase.getInstance().getReference("ortu")
                 .child(id)
                 .child("nilaiSemester")
                 .child(intent.getStringExtra("EXTRA_SEMESTER"));
 
+         /* Instantiation di bawah merupakan penerapan konsep Inheritance (ditandai dengan
+         keyword : new) */
         db.addValueEventListener(new ValueEventListener() {
+
+            /* Override method di bawah merupakan penerapan konsep Polymorphism */
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
@@ -61,12 +77,18 @@ public class NilaiSemester extends AppCompatActivity {
                 ratarata.setText(String.valueOf(findRataRata()));
             }
 
+            /* Override method di bawah merupakan penerapan konsep Polymorphism */
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
         });
     }
+
+    /* Method findRataRata untuk menghitung rata-rata keseluruhan nilai */
+
+    /* Method findRataRata menerapkan konsep Encapsulation karena memiliki access modifier private
+    * sehingga method hanya bisa diakses oleh class NilaiSemester. */
 
     private int findRataRata(){
         int agamaInt = Integer.parseInt(agama.getText().toString());

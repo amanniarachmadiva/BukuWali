@@ -19,6 +19,14 @@ import com.google.firebase.auth.FirebaseAuthException;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+/* Class Login berisi method untuk login sesuai username dan password pengguna.*/
+
+/* Class Login menerapkan konsep Inheritance, yaitu pewarisan dari class AppCompatActivity yang
+merupakan bawaan dari Android Stuido. Hal ini ditunjukkan dengan keyword "extends". */
+
+/* Class Login juga menerapkan konsep Encapsulation dimana variabel-variabel yang terdapat di
+class Login bersifat private. */
+
 public class Login extends AppCompatActivity {
 
     private Button button;
@@ -26,6 +34,7 @@ public class Login extends AppCompatActivity {
     private EditText username, password;
     private ProgressDialog progressDialog;
 
+    /* Override method di bawah merupakan penerapan konsep Polymorphism */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,6 +63,7 @@ public class Login extends AppCompatActivity {
     }
 
     public void opendashboard(){
+        /* Instantiation di bawah merupakan penerapan konsep Inheritance (ditandai dengan keyword : new) */
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }

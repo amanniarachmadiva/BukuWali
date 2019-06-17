@@ -15,14 +15,23 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class pembayaranspp extends AppCompatActivity {
+/* Class pembayaranspp berfungsi untuk menampilkan status pelunasan spp siswa */
+
+/* Class pembayaranspp menerapkan konsep Inheritance, yaitu pewarisan dari class AppCompatActivity yang
+merupakan bawaan dari Android Stuido. Hal ini ditunjukkan dengan keyword "extends". */
+
+public class pembayaranspp extends AppCompatActivity
+{
     TextView semester1, semester2, semester3, semester4, status1, status2, status3, status4;
     DatabaseReference db;
+
+    /* Override method di bawah merupakan penerapan konsep Polymorphism */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pembayaranspp);
 
+        /* Sintaks untuk menghubungkan dengan antarmuka (UI) */
         semester1 = findViewById(R.id.semester1);
         semester2 = findViewById(R.id.semester2);
         semester3 = findViewById(R.id.semester3);
@@ -32,11 +41,17 @@ public class pembayaranspp extends AppCompatActivity {
         status3 = findViewById(R.id.statussm3);
         status4 = findViewById(R.id.statussm4);
 
+        /* Sintaks untuk mendapatkan id unser sesuai yang ada di database */
         String id = FirebaseAuth.getInstance().getCurrentUser().getUid();
+
+        /* Program mengakses data di database (firebase) sesuai id ortu / pengguna */
         db = FirebaseDatabase.getInstance().getReference("ortu")
                 .child(id)
                 .child("sppSemester");
 
+         /* Method di bawah digunakan untuk mendapatkan data dari firebase menggunakan instantiation.
+         Instantiation di bawah merupakan penerapan konsep Inheritance (ditandai dengan
+         keyword : new) */
         db.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -50,6 +65,7 @@ public class pembayaranspp extends AppCompatActivity {
                 status4.setText(dataSnapshot.child("3").child("status").getValue(String.class));
             }
 
+            // bila error terjadi
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
